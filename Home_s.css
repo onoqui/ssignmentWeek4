@@ -1,0 +1,316 @@
+/* ==================== Colors & Base ==================== */
+:root {
+  --blue: #89CFF0;
+  --purple: #C8A2C8;
+  --purple-dark: #B266B2;
+  --text: #2c2c2c;
+  --background: #fff;
+  --gray-bg: #f6f7f9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', system-ui, Arial, sans-serif;
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.center {
+  text-align: center;
+}
+
+/* ==================== Welcome Bar ==================== */
+.welcome {
+  background: var(--blue);
+  color: #fff;
+  text-align: center;
+  padding: 0.25rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* ==================== Header (Flexbox) ==================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--blue);
+  color: #fff;
+  min-height: 64px;
+  padding: 0.1rem 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+}
+
+/* --- Logo --- */
+.logo img {
+  height: 100px;
+  width: auto;
+  display: block;
+  margin-top: -22px;
+  margin-bottom: -22px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .25));
+}
+
+/* --- Navigation Menu --- */
+header nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.4rem;
+  transition: background .25s ease;
+}
+
+header nav a:hover {
+  background: rgba(255, 255, 255, .18);
+}
+
+/* --- Call Button --- */
+.call {
+  background: var(--purple);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.6rem;
+  white-space: nowrap;
+  transition: background .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.call:hover {
+  background: var(--purple-dark);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .16);
+  transform: translateY(-1px);
+}
+
+/* ==================== Hero ==================== */
+.hero {
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #fff;
+  background:
+    linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)),
+    url('Living_room_backround.png') center/cover no-repeat;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, .35);
+}
+
+.hero p {
+  max-width: 58rem;
+  margin: 0 auto 1.25rem;
+  font-size: 1rem;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--purple);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.6rem;
+  transition: background .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.cta:hover {
+  background: var(--purple-dark);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .22);
+  transform: translateY(-2px);
+}
+
+/* ==================== Sections ==================== */
+section {
+  padding: 3.5rem 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* ==================== Services ==================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--blue);
+  color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
+}
+
+.img-box {
+  height: 180px;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0.25rem 0 1rem;
+}
+
+/* --- "All Services" Button --- */
+.services-btn-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.services-btn {
+  display: inline-block;
+  background: var(--purple);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.6rem;
+  transition: background .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.services-btn:hover {
+  background: var(--purple-dark);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .22);
+  transform: translateY(-2px);
+}
+
+/* ==================== Why Choose Us ==================== */
+.why {
+  background: var(--gray-bg);
+}
+
+.why ul {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding-left: 1.2rem;
+}
+
+.why li {
+  margin: 0.4rem 0;
+}
+
+/* ==================== Testimonials ==================== */
+.testimonials {
+  background: var(--blue);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  border-top: 4px solid #fff;
+}
+
+.testimonials h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.testimonial-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.testimonial-buttons a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 1.75rem;
+  border-radius: 0.6rem;
+  transition: all .3s ease;
+}
+
+.btn-outline {
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, .15);
+}
+
+.btn-solid {
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+}
+
+.btn-solid:hover {
+  background: var(--purple-dark);
+}
+
+/* ==================== Footer ==================== */
+footer {
+  background: var(--blue);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  border-top: 2px solid #fff;
+}
